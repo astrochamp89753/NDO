@@ -28,14 +28,64 @@ Prvo namestim Python, nato:
 ```bash
 # Ustvarim virtualno okolje
 python -m venv venv
-source venv/bin/activate
+django\Scripts\activate.bat
 
 # Namestim Django
 pip install django
 
 # Ustvarim Django projekt
-django-admin startproject myproject
-cd myproject
+django-admin startproject testsite
+cd testsite
+
+# Preverim delovanje projekta (dobim IP in PORT na katerem dobim odziv)
+python manage.py runserver # Server izklopim z CTRL+C
+
+# Ustvarim prvo aplikacijo
+python manage.py startapp main
+
+# V aplikaciji (main) lahko spremenim kodo v views.py in tako nadziram prikaz na strani
+
+# V aplikaciji (main) ustvarim novo datoteko urls.py v kateri shranim poti do različnih klicov funkcij v datoteki views.py
+
+# Da povežem aplikacijo s projektom moram spremeniti urls.py v mapi projekta (testsite)
+
+# Spremenim nastavitve projekta da aplikacijo lahko uporabljam tudi na drugih napravah (testsite/settings.py)
+python manage.py migrate
+
+# Dodam modele v aplikaciji (main) - ustvaril sem ToDoList in ToDoItem za test
+python manage.py makemigrations main # Modele migriram v aplikacijo (main)
+python manage.py migrate # Modele tudi apliciram
+
+# Dodam nekaj testnih vnosov v bazo
+python manage.py shell # Vnos naredim v terminalu z shellom
+from main.models import ToDoList, ToDoItem
+t = ToDoList(name="Testni List")
+t.save()
+
+# Preverim ali je shranitev delovala
+ToDoList.objects.all() 
+ToDoList.objects.get(id=1)
+ToDoList.objects.get(name="Testni List")
+
+# Zaradi definicije lista v razredu ToDoItem, vsak ToDoList ze vsebuje neko podatkovno mnozico
+t.todoitem_set.all()
+t.todoitem_set.create(text="Prva obveznost", complete=False)
+t.todoitem_set.get(id=1)
+
+# Dodatno lahko spremenim url, da preberem tudi id zeljenega lista z "<int:id>"
+# S podatkom id lahko preberem podatke iz baze in jih uporabim za prikaz na strani
+
+# Za lažje iskanje lahko uporabim filter
+ToDoList.objects().filter(name__startswith='T')
+ToDoList.objects().filter(id=2) # Uporabno, ker ne vrze errorja
+
+# Lahko tudi izbrisem element
+ToDoList.objects().get(id=1).delete()
+
+# Da dobim dostop do admin/ ustvarim nove avtentikacijske podatke
+python manage.py createsuperuser # Znotraj dostopa lahko nadziram dostop skupin in uporabnikov
+# Znotraj admin.py lahko spremenim kodo, da imam nadzor nad podatki
+
 ```
 
 ### 2. Dodajanje Dockerja

@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Ustvari naslov
+{% endblock %}
+
+{% block content %}
+    Ustvari stran
+    <form method="post" action="/ustvari">
+        {% csrf_token %}
+        {{form.as_p}}<button type="submit", name="Shrani">Ustvari nov vnos</button>
+    </form>
+{% endblock %}

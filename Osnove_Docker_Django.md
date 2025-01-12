@@ -22,7 +22,7 @@ Docker je platforma za razvoj, dostavo in izvajanje aplikacij z uporabo t.i. con
 ## Uporaba Django z Dockerjem
 S kombinacijo Django in Docker lahko razvijalci ustvarijo skalabilne in prenosljive aplikacije.
 
-### 1. Ustvarjanje Django projekta
+### 1. Ustvarjanje Django projekta z nekak osnovnimi lastnostmi
 Prvo namestim Python, nato:
 
 ```bash
@@ -85,10 +85,22 @@ ToDoList.objects().get(id=1).delete()
 # Da dobim dostop do admin/ ustvarim nove avtentikacijske podatke
 python manage.py createsuperuser # Znotraj dostopa lahko nadziram dostop skupin in uporabnikov
 # Znotraj admin.py lahko spremenim kodo, da imam nadzor nad podatki
-
 ```
 
-### 2. Dodajanje Dockerja
+### 2. Tvorba strani in njihovih lastnosti
+V programu naredim domačo stran in jo povežem s programom kot v prejšnjem primeru.
+Ustvarim novo mapo v katero bom shranjeval predloge (templates), v kateri moram imeti mapo z imenom aplikacije.
+Ustvaril sem osnovno (base) predlogo, ki jo želim uporabiti na vsaki strani, nato pa še glavno predlogo, ki je vidna na prvem delu strani.
+V kodi sem nato spremenil še, da server prikaže predloge namesto vnaprej napisane kode v programu (hardcoding).
+V predlogi sem lahko ustvaril nove spremenljivke kot na primer {{name}}. Tem sem lahko pripisal vrednosti v dejanskem odzivu.
+To sem lahko dodal v blok (block), ki ga lahko spremenim v html datoteki (če vpišem vrednost je to privzeta vrednost).
+Znotraj html datotek lahko uporabim tudi kvazi-python kodo (to me je zelo presenetilo).
+
+Zelo uporabni so tudi izpolnjevalni obrazci (forms) - osnovnega sem naredil za dodajanje v seznam, ki sem ga imel že prej.
+Za tega sem naredil nov program forms.py, v katerem uporabim django.forms (zelo uporabno).
+Ustvarim lahko tudi svoje obrazce za različne primere.
+
+### 3. Dodajanje Dockerja
 Ustvarim datoteke za Docker:
 
 #### `Dockerfile`
@@ -126,7 +138,7 @@ services:
       - DEBUG=1
 ```
 
-### 3. Gradnja in zagon kontejnerja
+### 4. Gradnja in zagon kontejnerja
 
 Ko imam pripravljene datoteke, zaženem naslednje ukaze:
 

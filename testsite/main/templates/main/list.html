@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Prikaz seznama
+{% endblock %}
+
+{% block content %}
+    <h1>
+        {{ls.name}}
+    </h1>
+    <form method="post", action="#">
+        {% csrf_token %}
+        <ul>
+        {% for item in ls.todoitem_set.all %}
+            {% if item.complete %}
+                <li><input type="checkbox", value="Pritisnjen", name="c{{item.id}}" checked>
+                    {{item.text}}
+                </li>
+            {% else %}
+                <li><input type="checkbox", value="Pritisnjen", name="c{{item.id}}">
+                    {{item.text}}
+                </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+        <button type="submit", name="Shrani", value="Shrani">Shrani</button>
+        <input type="text", name="Novi">
+        <button type="submit", name="Nov vnos", value="Nov vnos">Nov vnos</button>
+    </form>
+{% endblock %}

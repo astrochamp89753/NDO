@@ -1,4 +1,0 @@
-pushing:
-    git add -A
-    git commit -m "Commit Message" (izognemo vim)
-    git push

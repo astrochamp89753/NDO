@@ -43,5 +43,5 @@ jupyter-book create astrosim_book/ #Osnovna spletna stran
 jupyter-book build astrosim_book/ #Ustvari HTML stran
 
 cd _build/html
-python3 -m http.server 8000 #Zagon strani na lokalnem strežniku
+python -m http.server 8000 #Zagon strani na lokalnem strežniku, dostopno na localhost:8000
 ```

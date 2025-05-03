@@ -21,7 +21,7 @@ Vsako temo smo probali razložiti in prikazati na čim bolj intuitiven način, z
 ## Git
 Zaradi enostavnosti sem se odločil uporabiti [git](https://aguaclara.github.io/aguaclara_tutorial/git-and-github/git-in-the-command-line.html). Najbolj pomembni ukazi so:
 
-''' bash
+``` bash
 git clone <INSERT URL> #Klonira repo in ustvari mapo
 git status #Preveri stanje mape - ali se je kaj spremenilo
 
@@ -30,4 +30,4 @@ git pull #Mapo spremeni tako, da se sklada z najkasnejšim repo-m
 git add -A #Izbor datotek za naložitev na repo, -A izbere vse
 git commit -m "Commit Message" #Potrditev sprememb, z -m "" se izognemo vim-u
 git push #Naložitev datotek na repo
-'''
+```

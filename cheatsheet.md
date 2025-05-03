@@ -31,3 +31,17 @@ git add -A #Izbor datotek za naložitev na repo, -A izbere vse
 git commit -m "Commit Message" #Potrditev sprememb, z -m "" se izognemo vim-u
 git push #Naložitev datotek na repo
 ```
+
+## Jupyter-book
+Z nekaj dela smo hitro ugotovili, da ustvariti lastno spletno stran ni tako lahko in vzame veliko dela, zato smo se odločili, da bomo uporabili okolje [jupyter-book](https://jupyterbook.org/en/stable/intro.html). Ta zelo olajša gradnjo spletne strani, seveda pa smo morali nekaj stvari spremeniti tudi sami.
+
+Navodila prepisana iz spletne strani za prvih nekaj korakov:
+
+``` bash
+pip install -U jupyter-book
+jupyter-book create astrosim_book/ #Osnovna spletna stran
+jupyter-book build astrosim_book/ #Ustvari HTML stran
+
+cd _build/html
+python3 -m http.server 8000 #Zagon strani na lokalnem strežniku
+```

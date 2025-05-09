@@ -45,3 +45,27 @@ jupyter-book build astrosim_book/ #Ustvari HTML stran
 cd _build/html
 python -m http.server 8000 #Zagon strani na lokalnem strežniku, dostopno na localhost:8000
 ```
+
+Vse nadaljnje spremembe se upoštevajo z dodatnimi klici funkcije build in zagonom strani.
+
+## Node.js
+Za lažjo kontrolo nad uporabniki in bazami smo se odločili za [Node.js](https://nodejs.org/en/about).
+Za uporabo je kar nekaj dela toda se splača. Na debian strežniku lahko poženeš kodo za inštalacijo (ali poglej na to [stran](https://nodejs.org/en/download) za druge sisteme):
+
+``` bash
+# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+
+# Download and install Node.js:
+nvm install 22
+
+# Verify the Node.js version:
+node -v # Should print "v22.15.0".
+nvm current # Should print "v22.15.0".
+
+# Verify npm version:
+npm -v # Should print "10.9.2".
+```

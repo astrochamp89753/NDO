@@ -96,4 +96,4 @@ app.listen(process.env.PORT || port, () => {
 });
 ```
 
-To poženeš s preprostim ukazom `node`.
+To poženeš s preprostim ukazom `node .`.

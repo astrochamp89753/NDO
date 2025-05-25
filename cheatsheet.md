@@ -70,7 +70,7 @@ nvm current # Should print "v22.15.0".
 npm -v # Should print "10.9.2".
 ```
 
-Nato v podmapi '_build/html/' dodaj novo datoteko 'index.js', v katero kopiraj naslednjo kodo:
+Nato v podmapi `_build/html/` dodaj novo datoteko `index.js`, v katero kopiraj naslednjo kodo:
 
 ``` js
 const readFile = require('fs');
@@ -96,4 +96,4 @@ app.listen(process.env.PORT || port, () => {
 });
 ```
 
-To poženeš s preprostim ukazom 'node .'
+To poženeš s preprostim ukazom `node`.

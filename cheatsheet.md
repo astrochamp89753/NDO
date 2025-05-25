@@ -69,3 +69,31 @@ nvm current # Should print "v22.15.0".
 # Verify npm version:
 npm -v # Should print "10.9.2".
 ```
+
+Nato v podmapi '_build/html/' dodaj novo datoteko 'index.js', v katero kopiraj naslednjo kodo:
+
+``` js
+const readFile = require('fs');
+const express = require('express')
+
+const app = express();
+const port = 8000;
+
+app.use(express.static(__dirname));
+
+app.get('/', (req, res) => {
+    readFile('./intro.html', 'utf-8', (err, html) => {
+        if (err) {
+            res.status(500).send('Stran trenutno ne deluje!')
+        }
+
+        res.send(html);
+    })
+});
+
+app.listen(process.env.PORT || port, () => {
+    console.log('Spletna stran dosegljiva na http://localhost:'+port+'!');
+});
+```
+
+To poženeš s preprostim ukazom 'node .'

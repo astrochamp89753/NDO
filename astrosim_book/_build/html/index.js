@@ -1,21 +1,15 @@
-const readFile = require('fs');
-const express = require('express')
-
+const express = require('express');
 const app = express();
-const port = 8000;
+const path = require('path');
 
-app.use(express.static(__dirname));
+PORT = 8000;
 
+app.use(express.static(__dirname))
 app.get('/', (req, res) => {
-    readFile('./intro.html', 'utf-8', (err, html) => {
-        if (err) {
-            res.status(500).send('Stran trenutno ne deluje!')
-        }
+    const filePath = path.resolve(__dirname, 'index.html')
+    res.sendFile(filePath)
+})
 
-        res.send(html);
-    })
-});
-
-app.listen(process.env.PORT || port, () => {
-    console.log('Spletna stran dosegljiva na http://localhost:'+port+'!');
-});
+app.listen(PORT, () => {
+    console.log(`Strežnik zagnan na ${PORT}`)
+})

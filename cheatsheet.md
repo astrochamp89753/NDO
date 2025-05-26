@@ -70,30 +70,26 @@ nvm current # Should print "v22.15.0".
 npm -v # Should print "10.9.2".
 ```
 
-Nato v podmapi `_build/html/` dodaj novo datoteko `index.js`, v katero kopiraj naslednjo kodo:
+Nato v podmapi `_build/html/` poženi ukaz `npm install express` in ustvari novo datoteko `index.js`, v katero kopiraj naslednjo [kodo](https://codedamn.com/news/nodejs/use-nodejs-with-html).
 
 ``` js
-const readFile = require('fs');
-const express = require('express')
-
+const express = require('express');
 const app = express();
-const port = 8000;
+const path = require('path');
 
-app.use(express.static(__dirname));
+PORT = 8000;
 
 app.get('/', (req, res) => {
-    readFile('./intro.html', 'utf-8', (err, html) => {
-        if (err) {
-            res.status(500).send('Stran trenutno ne deluje!')
-        }
+    const filePath = path.resolve(__dirname, 'index.html')
+    res.sendFile(filePath)
+})
 
-        res.send(html);
-    })
-});
-
-app.listen(process.env.PORT || port, () => {
-    console.log('Spletna stran dosegljiva na http://localhost:'+port+'!');
-});
+app.listen(PORT, () => {
+    console.log(`Strežnik zagnan na ${PORT}`)
+})
 ```
 
-To poženeš s preprostim ukazom `node .`.
+To poženeš z ukazom `nohup node . > output.log 2>&1 & disown` (ali samo z `node .` če je le testni zagon in ne želiš pustiti zagnano tudi po končani ssh povezavi). Da program izklopiš prvo s komando `ps aux | grep node` pridobi PID (za komando mora pisati `node .`) in nato uporabi ukaz `kill <PID>`.
+
+## Spreminjanje jupyter-book
+Ustrezno dodaj ali odstrani datoteke in poženi ukaz `jupyter-book build .`, da ustvariš `html` datoteke. Nato na isti način poženi strežnik kot prej. Če želiš spreminjati osnove spletne strani se moraš malo [znajti](https://pypi.org/project/custom-launch-buttons/).

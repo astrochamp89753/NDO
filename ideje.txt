@@ -1,0 +1,13 @@
+Tu sem mislil, da bi lahko zapisovali ideje za spletno stran.
+To se pravi, kaj vse bi lahko dodajali, spreminjali in tako naprej.
+Hkrati bom tu pisal še ure in datume, kdaj sem delal na čemu - tu
+torej lahko preverjate evidenco.
+
+IDEJE:
++ kopiranje osnovne mape za vsakega uporabnika posebej (dostopajo lahko le po hierarhiji navzdol, tako se ni treba zafrkavati dodatno s tem do katerih datotek lahko dostopajo in do katerih ne, bo pa seveda terjalo več prostora na strežniku)
++ dodati je treba še način registracije (trenutno sem uporabnike direktno vpisal v kodo in uporabniki se morajo registrirati da sploh lahko dostopajo do spletne strani - mogoče lahko to spletno stran preko iframe "projiciramo" na drugo spletno stran s tekstom in če se tam registirajo in v iframu registrirajo lahko uporabljajo kodo)
++ možna je tudi registracija z gitom (oauthenticator), kar dovoljuje, da se izognemo ustvarjanju lokalnih uporabnikov v naši bazi in močno olajša avtentikacijo iz naše strani (se mi pa zdi, da je v takem primeru možna le registracija z gitom in nič drugega)
++ opcija je tudi polna kontrola nad datotečnim sistemom (https://jupyterhub.readthedocs.io/en/stable/tutorial/getting-started/authenticators-users-basics.html#give-some-users-access-to-other-users-notebook-servers)
+
+KONČANO:
++ menjava na jupyter hub (možnost avtentikacije in pisanja python kode) 29-7-2025 19:30-21:30

@@ -1,23 +1,4 @@
 # Cheatsheet
-Ta dokument je bolj mišljen za uporabo v razvoju spletne strani, mogoče pa komu tudi olajša delo (vse kar sem uporabil bo tu zbrano na eni lokaciji, če bi kdo podobno naredil spletno stran si lahko pomaga s to datoteko).
-
----
-## Uvod
-Ideja spletne strani je interakcijski način učenja snovi, ki se jo uči pri predmetu **NDO**. V sklopu predmeta in z nekaj raziskovanja (več o temu v [virih](https://github.com/astrochamp89753/NDO/blob/main/Viri.md)) smo se odločili za naslednje teme:
-
-- integratorji
-- čas/theta na tirnicah
-- gravitacijska frača
-- trki teles
-- raketna enačba
-- Keplerjevi zakoni
-- baricenter
-- kozmične hitrosti
-- Hohmannov tir
-- poljubna sprememba hitrosti
-
-Vsako temo smo probali razložiti in prikazati na čim bolj intuitiven način, za kar smo probali več različnih idej. Zadnja je **jupyterhub**.
-
 ## Git
 Zaradi enostavnosti sem se odločil uporabiti [git](https://aguaclara.github.io/aguaclara_tutorial/git-and-github/git-in-the-command-line.html). Najbolj pomembni ukazi so:
 
@@ -61,4 +42,7 @@ Po inštalaciji se moraš malo zafrkavati s konfiguracijo, nato pa je naprej zel
 
 ``` bash
 nohup setsid jupyterhub -f jupyterhub_config.py > jupyterhub.log 2>&1 < /dev/null &
+
+ps aux | grep jupyterhub #Tako dobiš ID
+kill PID
 ```

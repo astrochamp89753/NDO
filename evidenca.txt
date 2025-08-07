@@ -1,0 +1,10 @@
+9.12.2024   14:00-15:00 Urejanje Github projekta
+2.1.2025    17:00-19:00 Osnovni Django projekt
+12.1.2025   19:00-20:30 Povezava med front in back-end
+16.2.2025   17:00-19:30 Gradnja osnov vseh podstrani
+17.2.2025   16:00-18:30 Končanje prijave in podstrani
+9.3.2025    16:00-18:00 Popravljanje sftp, migracija in testni zagon
+20.4.2025   17:30-21:30 Poprava napak pri zagonu in dodajanje vsebine
+9.5.2025    17:00-19:30 Zamenjava iz http.server na Node.js
+29.7.2025   19:30-21:30 Menjava na Jupyter-hub
+7.8.2025    13:00-16:30 Igranje z nginx, Jupyter-book in Jupyter-hub

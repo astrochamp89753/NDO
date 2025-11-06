@@ -1,7 +1,8 @@
 jupyter-book
+jupyterlab>=3
+ipywidgets>=8
+jupyterlab_widgets>=3
+widgetsnbextension>=4
 matplotlib
 numpy
 scipy
-ipywidgets>=8.0
-jupyterlab>=3
-widgetsnbextension

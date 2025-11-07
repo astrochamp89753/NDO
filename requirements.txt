@@ -2,6 +2,7 @@ jupyter-book
 notebook
 ipywidgets>=8.0
 widgetsnbextension
+jupyterlab_widgets
 matplotlib
 numpy
 scipy

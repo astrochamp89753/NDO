@@ -1,6 +1,7 @@
 jupyter-book
 notebook
+ipywidgets>=8.0
+widgetsnbextension
 matplotlib
-ipympl
 numpy
 scipy

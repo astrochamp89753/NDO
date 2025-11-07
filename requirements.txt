@@ -1,7 +1,5 @@
 jupyter-book
-ipywidgets
 notebook
 matplotlib
 numpy
 scipy
-widgetsnbextension

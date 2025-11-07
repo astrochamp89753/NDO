@@ -1,5 +1,5 @@
 jupyter-book
-ipywidgets==7.6.8
+ipywidgets
 notebook
 matplotlib
 numpy
